@@ -1,0 +1,3 @@
+packer/output-*
+packer/packer_cache
+vagrant/.vagrant
