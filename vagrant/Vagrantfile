@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     pacman -Syu --noconfirm
-    pacman -S --noconfirm base-devel riscv32-elf-binutils riscv32-elf-gdb riscv32-elf-newlib riscv64-elf-binutils riscv64-elf-gcc riscv64-elf-gdb riscv64-elf-newlib riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc riscv64-linux-gnu-gdb riscv64-linux-gnu-glibc riscv64-linux-gnu-linux-api-headers spike git
+    pacman -S --noconfirm base-devel riscv32-elf-binutils riscv32-elf-gdb riscv32-elf-newlib riscv64-elf-binutils riscv64-elf-gcc riscv64-elf-gdb riscv64-elf-newlib riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc riscv64-linux-gnu-gdb riscv64-linux-gnu-glibc riscv64-linux-gnu-linux-api-headers spike git nano vim emacs
     useradd --shell=/bin/bash riscv
     su -c "cd /tmp && git clone https://aur.archlinux.org/riscv-pk.git && cd riscv-pk && makepkg" riscv
     pacman -U --noconfirm /tmp/riscv-pk/riscv-pk-*-x86_64.pkg.tar.zst
