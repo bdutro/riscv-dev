@@ -111,3 +111,7 @@ $$ sudo poweroff
 $$ exit
 $ vagrant halt
 ```
+
+## Acknowledgements
+
+The VirtualBox images are built using a Packer template based on https://github.com/elasticdog/packer-arch
