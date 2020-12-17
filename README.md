@@ -1,10 +1,10 @@
-# RISCV Development Environment
+# RISC-V Development Environment
 
 This repo manages a universal RISCV development environment based on Arch Linux
 
 ## Setup
 
-For convenience, the environment is available as a Docker container, a Vagrant VM, or a VirtualBox appliance. You only need to set it up with one of these methods.
+For convenience, the environment is available as a Docker container, a Vagrant VM, or a VirtualBox appliance. **You only need to set it up with one of these methods.**
 
 Docker requires the fewest system resources, while VirtualBox is the most user-friendly for people who are new to virtualization. The Vagrant VM is included for those who prefer it to Docker.
 
@@ -17,8 +17,6 @@ These images all require an x86_64 host machine with at least 4 cores and 8GB of
 ### Docker
 
 Install Docker using [these instructions](https://docs.docker.com/install/).
-
-Docker is a low-overhead virtualization engine that uses containers.
 
 ```
 $ docker pull bdutro/riscv-dev
@@ -35,8 +33,6 @@ $ docker stop -t 0 riscv
 ### Vagrant
 
 Install Vagrant using [these instructions](https://www.vagrantup.com/docs/installation).
-
-Vagrant is similar in some ways to Docker. The main difference is that it runs workloads in virtual machines instead of containers.
 
 ```
 $ mkdir riscv-dev
