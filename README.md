@@ -40,6 +40,8 @@ Install Vagrant using [these instructions](https://www.vagrantup.com/docs/instal
 Vagrant is similar in some ways to Docker. The main difference is that it runs workloads in virtual machines instead of containers.
 
 ```
+$ mkdir riscv-dev
+$ cd riscv-dev
 $ vagrant init bdutro/riscv-dev
 $ vagrant up
 $ vagrant ssh
@@ -77,6 +79,7 @@ $ ssh riscv@<ip-address>
 #### Vagrant
 
 ```
+$ cd riscv-dev
 $ vagrant up
 $ vagrant ssh
 ```
