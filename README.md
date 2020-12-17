@@ -4,11 +4,19 @@ This repo manages a universal RISCV development environment based on Arch Linux
 
 ## Setup
 
-The environment is available as a Docker container or VM.
+For convenience, the environment is available as a Docker container, a Vagrant VM, or a VirtualBox appliance. You only need to set it up with one of these methods.
 
-**Note**: Commands run on the host are prefixed with `$`. Commands run on the container/VM are prefixed with `$$`.
+Docker requires the fewest system resources, while VirtualBox is the most user-friendly for people who are new to virtualization. The Vagrant VM is included for those who prefer it to Docker.
+
+**Note:** Commands run on the host are prefixed with `$`. Commands run on the container/VM are prefixed with `$$`.
+
+#### System Requirements
+
+These images all require an x86_64 host machine with at least 4 cores and 8GB of RAM. All of the environments are limited to 4GB of RAM and the VMs are limited to 2 virtual CPUs.
 
 ### Docker
+
+Install Docker using [these instructions](https://docs.docker.com/install/).
 
 Docker is a low-overhead virtualization engine that uses containers.
 
@@ -19,7 +27,15 @@ $$ exit
 $ docker stop -t 0 riscv
 ```
 
+### VirtualBox
+
+Download the relevant VirtualBox installer for your system from [here](https://www.virtualbox.org/wiki/Downloads) and install using [these instructions](https://www.virtualbox.org/manual/ch02.html).
+
+Download the latest `riscv-dev.ova` from the Releases area and import it into VirtualBox.
+
 ### Vagrant
+
+Install Vagrant using [these instructions](https://www.vagrantup.com/docs/installation).
 
 Vagrant is similar in some ways to Docker. The main difference is that it runs workloads in virtual machines instead of containers.
 
@@ -30,8 +46,6 @@ $ vagrant ssh
 $$ exit
 $ vagrant halt
 ```
-
-### VirtualBox
 
 ## Usage
 
@@ -44,16 +58,27 @@ $ docker start riscv
 $ docker exec -it riscv /bin/bash
 ```
 
+#### VirtualBox
+
+Start VirtualBox and run the `riscv-dev` VM. You can either interact through the VirtualBox GUI or connect via SSH.
+
+Log in through the GUI (the username is **riscv** and the password is **riscv**), then run the following to get the IP address:
+
+```
+$$ ip addr show eth0 | grep 'inet '
+    inet <ip-address>/24 ...
+```
+
+Once you have the IP you can SSH into the VM:
+```
+$ ssh riscv@<ip-address>
+```
+
 #### Vagrant
 
 ```
 $ vagrant up
 $ vagrant ssh
-```
-
-#### VirtualBox
-
-```
 ```
 
 ### Compiling and Simulating a RISCV Program
@@ -76,14 +101,15 @@ $$ exit
 $ docker stop -t 0 riscv
 ```
 
+#### VirtualBox
+
+```
+$$ sudo poweroff
+```
+
 #### Vagrant
 
 ```
 $$ exit
 $ vagrant halt
-```
-
-#### VirtualBox
-
-```
 ```
