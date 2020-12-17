@@ -29,9 +29,8 @@ $ docker stop -t 0 riscv
 
 ### VirtualBox
 
-Download the relevant VirtualBox installer for your system from [here](https://www.virtualbox.org/wiki/Downloads) and install using [these instructions](https://www.virtualbox.org/manual/ch02.html).
-
-Download the latest `riscv-dev.ova` from the Releases area and import it into VirtualBox.
+1. Download the relevant VirtualBox installer for your system from [here](https://www.virtualbox.org/wiki/Downloads) and install using [these instructions](https://www.virtualbox.org/manual/ch02.html).
+2. Download the latest `riscv-dev.ova` from the [Releases area](https://github.com/bdutro/riscv-dev/releases/) and import it into VirtualBox.
 
 ### Vagrant
 
